@@ -1,33 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+
+
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Gestion stagiaires</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">List stagiaires</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/ajouterStagaiare">Ajouter stagiaires</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/supprimerStagaiare">Supprimer stagiaires</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/rechercherStagaiare">Rechercher par nom</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div className='container bg-dark d-flex justify-content-start'>
+        <p className='mt-2'><Link to="/" className='fw-bold text-decoration-none'>Home</Link></p>
+        <p className='mt-2'><Link to="/panier" className='fw-bold ms-3 text-decoration-none'>Panier</Link></p>
+    </div>
   )
 }
 
-export default Header
+export default Header 

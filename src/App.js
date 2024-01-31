@@ -1,19 +1,16 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import ListStagiaires from './components/ListStagiaires'
-import AjouterStagaire from './components/AjouterStagaire'
-import SupStagiaires from './components/SupStagiaires'
-import RechercheStagiaire from './components/RechercheStagiaire'
-
+import Home from './components/Home'
+import Panier from './components/Panier'
+import ProductDetails from './components/ProductDetails';
 
 function App() {
   return (
-    <div>
+    <div className='container'>
         <Routes>
-            <Route path='/' element={<ListStagiaires/>}/>
-            <Route path='/ajouterStagaiare' element={<AjouterStagaire/>}/>
-            <Route path='/supprimerStagaiare' element={<SupStagiaires/>}/>
-            <Route path='/rechercherStagaiare' element={<RechercheStagiaire/>}/>
+            <Route path='/' element={<Home/>}/> 
+            <Route path='/panier' element={<Panier/>}/> 
+            <Route path='/product_details/:product_id' element={<ProductDetails/>}/> 
         </Routes>
     </div>
   )
