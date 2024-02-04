@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import prod from '../produits.json'
 import { Link } from 'react-router-dom'
+import { AddProduct } from '../redux/panier/actionsCreator'
+import { useDispatch } from 'react-redux'
 
 function Search() {
-
+  const dispatching=useDispatch()
   const[value,setValue]=useState()
   const[filtredProducts,SetfiltredProducts]=useState()
   const[isSearch,setIsSearch]=useState(false)
@@ -27,15 +29,26 @@ function Search() {
             <input type='text' onChange={handleChange} placeholder='Search product here...' className='form-control input-height'/>
             <button className='btn btn-primary btn btn-sm button-width' >Search</button>
           </div>
-          <div>
+         
             {isSearch===false?(
               <span></span>
             ):(
-              filtredProducts.map((product,index)=>{
-                return <Link className='row p-2 py-1 text-decoration-none text text-dark' key={index} to={`/product_details/${product.id}`}><span className='bg-light p-2'>{product.designation}</span></Link>
-              })
+              <div className='container row mx-2 my-2 pb-3 bg-light'>
+                <h3>Searching ...</h3>
+                {filtredProducts.map((product,index)=>{
+                  return <div className='col-12 col-md-4 col-lg-3' key={index}>
+                          <div className='p-1 mt-3 main-card border'>
+                              <Link to={`/product_details/${product.id}`} className='text-decoration-none text-dark'>
+                                  <img src={`../../image/${product.img}`} alt='img-prod' className='product-image-search'/>
+                              </Link>
+                              <p>{product.designation.substring(0,20)} ...</p>
+                              <p className='fw-bold'>{product.price} <span className='fw-light'>DH(HT)</span></p>
+                              <p onClick={()=>dispatching(AddProduct({id:product.id,quantity:product.quantity,designation:product.designation,price:product.price,img:product.img}))} className='btn btn-outline-primary mt-3'>Ajouter au panier</p>
+                          </div>
+                         </div>
+                })}
+              </div>
             )}
-          </div>
       </div>
     </div>
   )

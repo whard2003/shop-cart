@@ -7,7 +7,7 @@ import ProductDetails from './components/ProductDetails';
 function App() {
   /*const name = talbi*/
   return (
-    <div className='container'>
+    <div className='container-fluid'>
         <Routes>
             <Route path='/' element={<Home/>}/> 
             <Route path='/panier' element={<Panier/>}/> 

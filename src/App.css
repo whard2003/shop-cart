@@ -71,3 +71,12 @@ input[type=number]:focus,
     width: 60px;
     object-fit: cover;
 }
+
+
+.product-image-search{
+    height: 100px;
+    width: 200px;
+}
+.main-card{
+    width: 210px;
+}

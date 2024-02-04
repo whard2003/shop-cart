@@ -19,7 +19,7 @@ function Products() {
                         <p className='fw-bold'>{prod.price} <span className='fw-light'>DH(HT)</span></p>
                         <p onClick={()=>dispatching(AddProduct({id:prod.id,quantity:prod.quantity,designation:prod.designation,price:prod.price,img:prod.img}))} className='btn btn-outline-primary mt-3'>Ajouter au panier</p>
                     </div>
-            </div>
+                   </div>
         })}
     </div>
   )
