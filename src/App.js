@@ -5,6 +5,7 @@ import Panier from './components/Panier'
 import ProductDetails from './components/ProductDetails';
 
 function App() {
+  /*const name = talbi*/
   return (
     <div className='container'>
         <Routes>
